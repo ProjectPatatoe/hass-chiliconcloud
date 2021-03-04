@@ -1,0 +1,10 @@
+{
+  "domain": "chiliconcloud",
+  "name": "Chilicon Cloud",
+  "documentation": "https://www.home-assistant.io/integrations/chiliconcloud",
+  "issue_tracker": "https://github.com/ProjectPatatoe/hass-chiliconcloud/issues",
+  "dependencies": [],
+  "after_dependencies": [],
+  "codeowners": ["@ProjectPatatoe"],
+  "requirements": ["requests>=2.24.0"]
+}
