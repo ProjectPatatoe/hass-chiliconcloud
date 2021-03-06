@@ -5,7 +5,7 @@ import json
 import requests
 
 # Get credentials from file
-with open('config.json', 'r') as configfile:
+with open('testing/config.json', 'r') as configfile:
     config=json.loads(configfile.read())
 
 print('username: ', config['username'])
