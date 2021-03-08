@@ -2,8 +2,8 @@
 
 DOMAIN = "chiliconcloud"
 
-CONF_USERNAME = "username"
-CONF_PASSWORD = "password"
+#CONF_USERNAME = "username"
+#CONF_PASSWORD = "password"
 CONF_INSTALLATION_HASH = "installation_hash"
 
 ROOT_URL = 'https://cloud.chiliconpower.com'

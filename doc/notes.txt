@@ -1,0 +1,58 @@
+notes for chilicon cloud development
+
+===scrape installation hash from basic user login / dashboard
+id="systemsTableBody" -> TR[x] -> TD[0] -> SPAN [data-hash]
+
+import from .const is the const.py file
+
+```html
+<section class="systemsTableSection">
+    <p style="margin: 0;"><b>&nbsp;Select a system to view the details</b></p>
+    <table id="systemsTable" class="display" cellspacing="0" min-width="800px">
+        <thead>
+        <tr>
+            <th>System Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Current Power</th>
+            <th>Today's Energy</th>
+            <th>Lifetime Energy</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id="systemsTableBody">
+            <tr>
+                    <td><span data-hash='b8dedb3df3547cc268464ce64a8cb49de5838f6b98b9d23b569c078b0af0407e' data-id='1020'>Landon Allred (Off Grid AC Coupled)</span></td>
+                    <td>Deweyville</td>
+                    <td>UT 84309</td>
+                    <td class style="text-align: right;">0 W</td>
+                    <td class style="text-align: right;">0 Wh</td>
+                    <td class style="text-align: right;">14.69 MWh</td>
+                                <td class style="text-align: center; color: black">Disconnected</td>
+                </tr>
+                <tr>
+                    <td><span data-hash='1cb0eff7a7ed255f560178845f8dd709a16d02555eab4dc9baa863f42843f944' data-id='1454'>Benguhe Test Site</span></td>
+                    <td>Irvine</td>
+                    <td>CA 92604</td>
+                    <td class style="text-align: right;">0 W</td>
+                    <td class style="text-align: right;">6.611 kWh</td>
+                    <td class style="text-align: right;">2.40 MWh</td>
+                            <td class style="text-align: center; color: black">Normal</td>
+                </tr>
+                <tr>
+                    <td><span data-hash='a37d6732449511b05c84b7c79d29dab7492c2dc9fcc035b17836c27776386c8c' data-id='1572'>Red Roof Inn Stockton</span></td>
+                    <td>Stockton</td>
+                    <td>CA 95203</td>
+                    <td class style="text-align: right;">0 W</td>
+                    <td class style="text-align: right;">0 Wh</td>
+                    <td class style="text-align: right;">103.93 MWh</td>
+                            <td class style="text-align: center; color: black">Disconnected</td>
+                </tr>
+        </tbody>
+        <ul class='custom-menu'>
+                <li data-action = "disable"><i class="ui-icon ui-icon-cancel"></i>Remove installation from account</li>
+            <hr>
+            <li data-action="add_user"><i class="ui-icon ui-icon-plusthick"></i>Add user to installation</li>
+        </ul>
+    </table>
+```
