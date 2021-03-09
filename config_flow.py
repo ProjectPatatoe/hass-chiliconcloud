@@ -42,29 +42,33 @@ class ChiliconCloudConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         errors = {}
 
         if user_input is not None:
-            try:
-                #make connection stuff
-                req_headers = {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
+            #make connection stuff
+            _LOGGER.info("make connection stuff")
+            req_headers = {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
 
-                form_data = {
-                    'username': user_input[CONF_USERNAME],
-                    'password': user_input[CONF_PASSWORD],
-                    'Login': 'Login'
-                }
-                async with aiohttp_client.ClientSession() as session:
-                    async with session.post(LOGIN_URL,data=form_data,headers=req_headers) as resp:
-                        _LOGGER.info("Request Headers: %s" % resp.headers)
-                        _LOGGER.info("Request Status Code: %s" % resp.status)
-                        _LOGGER.info("Request Text: %s" % await resp.text())
-
-
-            except Exception:
-                _LOGGER.exception("Unexcepted exception")
-                errors["base"] = "unknown"
-            else:
-                pass
+            form_data = {
+                'username': user_input[CONF_USERNAME],
+                'password': user_input[CONF_PASSWORD],
+                'Login': 'Login'
+            }
+            async with aiohttp_client.ClientSession() as session:
+                async with session.post(LOGIN_URL,data=form_data,headers=req_headers) as resp:
+                    _LOGGER.info("Request Headers: %s" % resp.headers)
+                    _LOGGER.info("Request Status Code: %s" % resp.status)
+                    _LOGGER.info("Request Text: %s" % await resp.text())
+            #start saving info here?
+            _LOGGER.info("saving info?")
+            #return self.async_create_entry(
+            #    title="installationnamehere",
+            #    data={
+            #        "username": user_input[CONF_USERNAME],
+            #        "password": user_input[CONF_PASSWORD],
+            #        "installtion_hash": user_input[CONF_INSTALLATION_HASH]
+            #    }
+            #)
+        
         return self.async_show_form(
             step_id="user", data_schema=DATA_SCHEMA, errors=errors
         )
