@@ -1,7 +1,6 @@
 {
   "domain": "chiliconcloud",
   "name": "Chilicon Cloud",
-  "config_flow": true,
   "documentation": "https://github.com/ProjectPatatoe/hass-chiliconcloud/tree/main/doc",
   "issue_tracker": "https://github.com/ProjectPatatoe/hass-chiliconcloud/issues",
   "dependencies": [],
