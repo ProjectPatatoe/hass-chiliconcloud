@@ -1,5 +1,12 @@
 """Constants for Chilicon Cloud integration"""
 
+from homeassistant.components.sensor import (
+    STATE_CLASS_MEASUREMENT,
+    STATE_CLASS_TOTAL_INCREASING,
+    SensorEntityDescription,
+)
+from homeassistant.const import DEVICE_CLASS_ENERGY, ENERGY_WATT_HOUR, POWER_WATT
+
 DOMAIN = "chiliconcloud"
 
 #CONF_USERNAME = "username"
